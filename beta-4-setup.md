@@ -264,6 +264,10 @@ can:
 
 * Configure yum / subscription manager as follows:
 
+  **Note:** You will have had to register/attach your system first.  Also,
+    *rhel-server-7-ose-beta-rpms* is not a typo.  The name will change at GA to be
+    consistent with the RHEL channel names.
+
         subscription-manager repos --disable="*"
         subscription-manager repos \
         --enable="rhel-7-server-rpms" \
@@ -271,15 +275,11 @@ can:
         --enable="rhel-7-server-optional-rpms" \
         --enable="rhel-server-7-ose-beta-rpms"
 
-    **Note:** You will have had to register/attach your system first.  Also,
-    *rhel-server-7-ose-beta-rpms* is not a typo.  The name will change at GA to be
-    consistent with the RHEL channel names.
-
 * Import the GPG key for beta:
 
         rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-beta
 
-Onn **each** VM:
+On **each** VM:
 
 1. Install deltarpm to make package updates a little faster:
 
